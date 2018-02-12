@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
     //bounce
     private bool bounce = true;
 
-    [SerializeField] float speed = 5f;
+    [SerializeField] float speed = 4f;
 
 
     void Start()
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
     void Update()
     {
         //mouse click for movement
-        if(Input.GetMouseButton(0) && bounce)
+        if(Input.GetMouseButtonDown(0) && bounce)
         {
             ChangeBool();
             ChangeDirection();

@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class Platform : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
     {
         if(col.gameObject.tag =="Player")
         {
-            invoke("FallDown", 1f);
+            Invoke("MoveTile", 0.5f);
         }
+    }
+    private void MoveTile()
+    {
+        this.GetComponentInParent<Rigidbody>().isKinematic = false;
+        Destroy(this.transform.parent.gameObject, 2f);
     }
 }
