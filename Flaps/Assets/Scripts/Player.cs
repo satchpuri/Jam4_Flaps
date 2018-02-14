@@ -24,16 +24,19 @@ public class Player : MonoBehaviour {
     void Update()
     {
         //mouse click for movement
-        if(Input.GetMouseButtonDown(0) && bounce)
+        if (PauseMenu.isPaused == false)
         {
-            ChangeBool();
-            ChangeDirection();
-        }
+            if (Input.GetMouseButtonDown(0) && bounce)
+            {
+                ChangeBool();
+                ChangeDirection();
+            }
 
-        //check for collision
-        if (Physics.Raycast(this.transform.position, Vector3.down * 2) == false)
-        {
-            Bounce();
+            //check for collision
+            if (Physics.Raycast(this.transform.position, Vector3.down * 2) == false)
+            {
+                Bounce();
+            }
         }
     }
 

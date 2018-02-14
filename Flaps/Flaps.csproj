@@ -225,8 +225,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\OutlineEffect\LinkedSet.cs" />
+    <Compile Include="Assets\OutlineEffect\Outline.cs" />
+    <Compile Include="Assets\OutlineEffect\OutlineEffect.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameOverMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Platform.cs" />
@@ -266,6 +270,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\OutlineEffect\Resources\OutlineBufferShader.shader" />
+    <None Include="Assets\OutlineEffect\Resources\OutlineShader.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />

@@ -9,8 +9,6 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour {
 
-
-
     //for master audio
     public AudioMixer audioMixer;
     //getting screen resoultion

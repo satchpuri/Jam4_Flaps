@@ -15,12 +15,12 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        color1 = Color.black;
-        color2 = new Color(0f, 0f, 249f);
+        color1 = new Color(Random.Range(0, 255f), 0, Random.Range(0, 55f));
+        color2 = new Color(0, 255, Random.Range(0, 255f));
         size = platform.transform.localScale.x;
         lastPos = platform.transform.position;
 
-        for(int i = 0; i < 15; i++)
+        for(int i = 0; i < 5; i++)
         {
             //Spawn tiles on the Z axis
             SpawnZ();
@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour {
 
         InvokeRepeating("SpawnPlatform", 2f, 0.2f);
 	}
+     void Update()
+    {
+        
+    }
 
     private void SpawnX()
     {
