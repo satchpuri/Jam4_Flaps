@@ -10,10 +10,10 @@ public class Player : MonoBehaviour {
     //move?
     private bool isMovingRight = false;
     //bounce
-    private bool bounce = true;
+    public bool bounce = true;
 
     [SerializeField] float speed = 4f;
-
+    [SerializeField] GameObject particle;
 
     void Start()
     {
@@ -69,7 +69,17 @@ public class Player : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Coin")
+        {
+            Destroy(other.gameObject);
+            GameObject _particle = Instantiate(particle) as GameObject;
+            _particle.transform.position = this.transform.position;
 
+            Destroy(_particle, 1f);
+        }
+    }
 
 
 }
