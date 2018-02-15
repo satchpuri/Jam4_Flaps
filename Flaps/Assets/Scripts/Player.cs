@@ -12,12 +12,15 @@ public class Player : MonoBehaviour {
     //bounce
     public bool bounce = true;
 
+    //[SerializeField] GameObject hud;
+    public HUD hud;
     [SerializeField] float speed = 4f;
     [SerializeField] GameObject particle;
 
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
+        hud = FindObjectOfType(typeof(HUD)) as HUD;
 
     }
 
@@ -76,7 +79,7 @@ public class Player : MonoBehaviour {
             Destroy(other.gameObject);
             GameObject _particle = Instantiate(particle) as GameObject;
             _particle.transform.position = this.transform.position;
-
+            hud.SetCountText();
             Destroy(_particle, 1f);
         }
     }

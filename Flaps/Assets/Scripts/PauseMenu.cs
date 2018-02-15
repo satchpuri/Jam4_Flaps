@@ -8,8 +8,10 @@ public class PauseMenu : MonoBehaviour {
     //pause check
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
-	// Update is called once per frame
-	void Update ()
+    [SerializeField] GameObject Hud;
+
+    // Update is called once per frame
+    void Update ()
     {
 		if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -26,6 +28,7 @@ public class PauseMenu : MonoBehaviour {
 
     void Pause()
     {
+        Hud.SetActive(false);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -35,6 +38,7 @@ public class PauseMenu : MonoBehaviour {
 
     public void Resume()
     {
+        Hud.SetActive(true);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
